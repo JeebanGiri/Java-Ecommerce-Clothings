@@ -14,7 +14,7 @@ public class User {
 		this.userContact = userContact;
 		this.userName = userName;
 		this.userEmail = userEmail;
-		this.userAddress = userAddress;
+		this.userAddress = userAddress; 
 		this.userImage = userImage;
 		this.userPassword = userPassword;
 	}

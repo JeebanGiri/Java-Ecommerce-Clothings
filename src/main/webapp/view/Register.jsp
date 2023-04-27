@@ -63,7 +63,7 @@ a {
 </style>
 </head>
 <body>
-	<form action="/register" method="post" enctype="multipart/form-data">
+	<form action="../register" method="post" enctype="multipart/form-data">
 		<h2>Register</h2>
 		<div class="form-group">
 			<label for="user-image">User Image</label> <input type="file"
