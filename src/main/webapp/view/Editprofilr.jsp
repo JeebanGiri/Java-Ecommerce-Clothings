@@ -66,7 +66,7 @@
     .bottom {
       padding: 24px 0;
     }
-    form {
+    form.search {
       color: #555;
       display: flex;
       padding: 2px;
@@ -98,7 +98,7 @@
       color: #bbb;
     }
 
-    button[type="submit"] {
+    button.search {
       text-indent: -999px;
       overflow: hidden;
       width: 40px;
@@ -196,8 +196,7 @@
     }
     .slide {
       background: #f2f2f2;
-      height: 800px;
-      padding-top:50px;
+      padding-bottom: 80px;
     }
     .footer_head {
       height: 60px;
@@ -241,7 +240,60 @@
       font-size: 16px;
     }
 
-    /* Tables */
+    /* for form */
+    .slide form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .slide h2 {
+      text-align: center;
+    }
+    .slide .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button[type="submit"] {
+      display: block;
+      margin: 0 auto;
+      padding: 10px 20px;
+      background-color: #008cba;
+      color: #fff;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .slide p {
+      text-align: center;
+    }
+    .slide a {
+      color: #008cba;
+    }
+    .slide h2 {
+      margin-block-start: 0em;
+      padding-top: 20px;
+      font-size: 36px;
+    }
   </style>
   <body>
     <nav>
@@ -255,10 +307,10 @@
             <a href="./cart.html">
               <li><i class="fa-solid fa-cart-shopping"></i>Cart</li>
             </a>
-            <a href="./Register.jsp">
+            <a href="./register.html">
               <li><i class="fa-solid fa-user"></i>Create Account</li>
             </a>
-            <a href="./Login.jsp">
+            <a href="./login.html">
               <li><i class="fa-solid fa-right-to-bracket"></i>Login</li>
             </a>
           </div>
@@ -270,9 +322,9 @@
       <div class="container">
         <div class="row">
           <img alt="" src="./image/LOGO.png" height="70px">
-          <form>
+          <form class="search">
             <input type="search" placeholder="Search..." />
-            <button type="submit">Search</button>
+            <button class="search">Search</button>
           </form>
         </div>
       </div>
@@ -301,10 +353,10 @@
             </div>
           </div>
           <div class="right">
-            <a href="">
+            <a href="./index.html">
               <li><i class="fa-solid fa-house"></i>Home</li>
             </a>
-            <a href="../products">
+            <a href="./products.html">
               <li>Products</li>
             </a>
           </div>
@@ -313,22 +365,37 @@
     </div>
     <div class="slide">
       <div class="container">
-        <div class="slideshow-container">
-          <div class="mySlides fade">
-            <img src="./image/1.png" style="width: 100%" />
-          </div>
+        <form action="../register" method="post" enctype="multipart/form-data">
+          <h2>Edit your Profile</h2>
 
-          <div class="mySlides fade">
-            <img src="./image/2.png" style="width: 100%" />
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
           </div>
-
-          <div class="mySlides fade">
-            <img src="./image/3.png" style="width: 100%" />
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              pattern="[0-9]{10}"
+              required
+            />
           </div>
-          <div class="mySlides fade">
-            <img src="./image/4.png" style="width: 100%" />
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
           </div>
-        </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" required />
+          </div>
+          <div class="form-group">
+            <label for="user-image">User Image</label>
+            <input type="file" id="user-image" name="user-image" />
+          </div>
+          <button type="submit">Update</button>
+        </form>
       </div>
     </div>
     <footer>
@@ -341,10 +408,7 @@
             <div class="box">
               <h1>About Lugaharu</h1>
               <a href="#">
-                <li>
-                  <i class="fa-solid fa-location-dot"></i>Sundarharaicha:03,
-                  Nepal
-                </li>
+                <li><i class="fa-solid fa-location-dot"></i> Nepal</li>
               </a>
               <a href="#">
                 <li>
@@ -390,23 +454,6 @@
     <script>
       function myFunction() {
         document.getElementById("drop").classList.toggle("show");
-      }
-      let slideIndex = 0;
-      showSlides();
-
-      function showSlides() {
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-          slideIndex = 1;
-        }
-
-        slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 2000); // Change image every 2 second
       }
     </script>
   </body>

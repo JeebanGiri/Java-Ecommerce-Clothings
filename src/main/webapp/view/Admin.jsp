@@ -206,7 +206,7 @@
             <a href="./orderlist.html">
               <li>Orders</li>
             </a>
-            <a href="./login.html">
+            <a href="./view/Login.jsp">
               <li>Logout</li>
             </a>
           </div>
@@ -237,7 +237,7 @@
               <td>
                 <div class="email">
                   <span>${product.productName}</span>
-                  <span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
+                  <span>${product.productDescripiton }</span>
                 </div>
               </td>
               <td>${product.productPrice}</td>

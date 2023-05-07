@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<<<<<<< HEAD
+<head>
 <title>Advanced Programming</title>
     <script
       src="https://kit.fontawesome.com/dca5378fb4.js"
@@ -77,14 +77,13 @@
       margin-left: auto;
       width: 400px;
     }
-=======
+
 <title> title here</title>
 <style>
 form {
 	max-width: 600px;
 	margin: 0 auto;
 }
->>>>>>> ac5bbc53a26c8206aaa9c8853734cb0f3a7dec07
 
     input[type="search"] {
       border: none;
@@ -330,7 +329,7 @@ form {
     <div class="bottom">
       <div class="container">
         <div class="row">
-          <h1>Lugaa haru.com</h1>
+          <img alt="" src="./image/LOGO.png" height="70px">
           <form class="search">
             <input type="search" placeholder="Search..." />
             <button class="search">Search</button>

@@ -267,11 +267,14 @@
     }
     .product .detail {
       height: 36px;
-      border: 1px solid green;
+      margin-left:30px;
+      margin-top:10px;
+      font-size:13px;
+      
+      
     }
     .product .price {
       height: 30px;
-      border: 1px solid green;
     }
     .product .resp {
       display: flex;
@@ -279,13 +282,12 @@
     }
     /* hiding add to cart */
     .addtocartbtn {
-      display: none;
-      bottom: 25px;
+      bottom: 20px;
       height: 55px;
-      width: 150px;
-      z-index: 1;
-      margin-top: -55px;
-      margin-left: -50px;
+      width: 120px;
+      overflow:visible;
+      margin-top:0px;
+      margin-left: 100px;
       background-color: #6bce04;
       border: none;
       color: #f0f0f0;
@@ -296,15 +298,10 @@
     /* displaying add to cart on hover */
     .product:hover .addtocartbtn {
       display: block;
-      animation: fadeIn 1s;
-      -webkit-animation: fadeIn 1s;
-      -moz-animation: fadeIn 1s;
-      -o-animation: fadeIn 1s;
-      -ms-animation: fadeIn 1s;
+        z-index: 1;
     }
     .addtocartbtn:hover {
       background-color: #222222;
-      z-index:1;
     }
 
     @keyframes fadeIn {
@@ -315,6 +312,8 @@
         opacity: 1;
       }
     }
+
+    
   </style>
   <body>
     <nav>
@@ -342,7 +341,7 @@
     <div class="bottom">
       <div class="container">
         <div class="row">
-          <h1>Lugaa haru.com</h1>
+          <img alt="" src="./image/LOGO.png" height="70px">
           <form>
             <input type="search" placeholder="Search..." />
             <button type="submit">Search</button>
@@ -374,10 +373,10 @@
             </div>
           </div>
           <div class="right">
-            <a href="./Index.jsp">
+            <a href="./view/Index.jsp">
               <li><i class="fa-solid fa-house"></i>Home</li>
             </a>
-            <a href="./Products.jsp">
+            <a href="products">
               <li>Products</li>
             </a>
           </div>
@@ -390,7 +389,6 @@
         <div class="products">
         <c:forEach items="${productList}" var="product">
           <div class="product">
-            <a href="./detail.html">
               <div class="resp">
                 <div class="image">
                 <img src="Images/Product/${product.imageName}" height="250px" width="200px" />
@@ -400,8 +398,8 @@
                 </div>
               </div>
               <div class="detail">${product.productName}</div>
-              <div class="price">${product.productPrice}</div>
-            </a>
+              <div class="price"> Price : Rs. ${product.productPrice}</div>
+
           </div>
           </c:forEach>
         </div>
@@ -464,11 +462,7 @@
       function myFunction() {
         document.getElementById("drop").classList.toggle("show");
       }
-      const addBtn = document.querySelector(".addtocartbtn");
-      addBtn.addEventListener("click", function (event) {
-        event.preventDefault(); // prevents the default behavior of the anchor tag
-        window.location.href = "http://localhost:5500/cart.html";
-      });
+
     </script>
   </body>
 </html>

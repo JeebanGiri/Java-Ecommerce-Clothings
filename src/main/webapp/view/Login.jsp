@@ -313,7 +313,7 @@
     <div class="bottom">
       <div class="container">
         <div class="row">
-          <h1>Lugaa haru.com</h1>
+		<img alt="" src="./image/LOGO.png" height="70px">
           <form class="search">
             <input type="search" placeholder="Search..." />
             <button class="search">Search</button>

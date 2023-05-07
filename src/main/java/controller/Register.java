@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
+import model.AESEncryption;
 import model.RegisterUser;
 import model.UserDao;
 
@@ -27,10 +28,11 @@ public class Register extends HttpServlet{
         String uemail = req.getParameter("email");
         String uaddress = req.getParameter("address");
         String upassword=req.getParameter("password");
+        String encryptedPassword = AESEncryption.encrypt(upassword);
         Part userImage = req.getPart("user-image");
         String imageName = "User"+uname+".png";
         
-        RegisterUser user = new RegisterUser( uname, uphone, uemail,  uaddress, upassword, imageName);
+        RegisterUser user = new RegisterUser( uname, uphone, uemail,  uaddress, encryptedPassword, imageName);
         String message=new UserDao().addUser(user);
         
         RequestDispatcher rd;

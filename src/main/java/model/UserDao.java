@@ -85,4 +85,29 @@ public class UserDao {
 	    }
 	    return new LoginResult(isValid, isAdmin);
 	}
+	public String updateUser(RegisterUser updateUser) {
+		String message = "";
+		try {
+			
+			Connection con =  getConnection();
+			String query = "UPDATE registration SET name=?, phone=?,email=?,address=?,password=?,image-name=? where id=?";
+			PreparedStatement pst = con.prepareStatement(query);
+			pst.setString(1, updateUser.getUname());
+			pst.setString(2, updateUser.getUphone());
+			pst.setString(3, updateUser.getUemail());
+			pst.setString(4, updateUser.getUaddress());
+			pst.setString(5, updateUser.getUpassword());
+			pst.setString(6, updateUser.getImageName());
+			int rows=pst.executeUpdate();
+
+			if(rows >= 1) {
+				message = "Successfully Updated";
+			}
+			con.close();	
+		} catch (SQLException | ClassNotFoundException e) {
+			System.out.println(e.getMessage());
+			message = e.getMessage();
+		}
+		return message;	
+	}
 }
