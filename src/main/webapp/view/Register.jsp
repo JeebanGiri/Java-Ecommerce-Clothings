@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<<<<<<< HEAD
 <title>Advanced Programming</title>
     <script
       src="https://kit.fontawesome.com/dca5378fb4.js"
@@ -76,6 +77,14 @@
       margin-left: auto;
       width: 400px;
     }
+=======
+<title> title here</title>
+<style>
+form {
+	max-width: 600px;
+	margin: 0 auto;
+}
+>>>>>>> ac5bbc53a26c8206aaa9c8853734cb0f3a7dec07
 
     input[type="search"] {
       border: none;
