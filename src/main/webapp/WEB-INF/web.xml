@@ -9,4 +9,14 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <context-param>
+  <param-name>productImagePath</param-name>
+  <param-value>D:/E-commerce/AdvanceProgrammingCourseWork/src/main/webapp/Images/Product/</param-value>
+  </context-param>
+  
+  <context-param>
+  <param-name>userImagePath</param-name>
+  <param-value>D:/E-commerce/AdvanceProgrammingCourseWork/src/main/webapp/Images/User/</param-value>
+  </context-param>
+  
 </web-app>
