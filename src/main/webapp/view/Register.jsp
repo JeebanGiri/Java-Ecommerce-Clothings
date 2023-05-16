@@ -312,13 +312,13 @@ form {
             <a href="mailto:khadkanripesh@gmail.com">khadkanripesh@gmail.com</a>
           </div>
           <div class="right">
-            <a href="./cart.html">
+            <a href="./Cart.jsp">
               <li><i class="fa-solid fa-cart-shopping"></i>Cart</li>
             </a>
-            <a href="./register.html">
+            <a href="./Register.jsp">
               <li><i class="fa-solid fa-user"></i>Create Account</li>
             </a>
-            <a href="./login.html">
+            <a href="./Login.jsp">
               <li><i class="fa-solid fa-right-to-bracket"></i>Login</li>
             </a>
           </div>
@@ -330,10 +330,6 @@ form {
       <div class="container">
         <div class="row">
           <img alt="" src="./image/LOGO.png" height="70px">
-          <form class="search">
-            <input type="search" placeholder="Search..." />
-            <button class="search">Search</button>
-          </form>
         </div>
       </div>
     </div>
@@ -361,10 +357,10 @@ form {
             </div>
           </div>
           <div class="right">
-            <a href="./index.html">
+            <a href="./Index.jsp">
               <li><i class="fa-solid fa-house"></i>Home</li>
             </a>
-            <a href="./products.html">
+            <a href="./Products.jsp">
               <li>Products</li>
             </a>
           </div>

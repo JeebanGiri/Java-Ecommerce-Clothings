@@ -70,7 +70,8 @@ public class UserDao {
 	        userStmt.setString(1, email);
 	        userStmt.setString(2, password);
 	        adminStmt.setString(1, email);
-	        adminStmt.setString(2, password);
+	        String dpsw=AESEncryption.decrypt(password);
+	        adminStmt.setString(2, dpsw);
 	        ResultSet userResult = userStmt.executeQuery();
 	        ResultSet adminResult = adminStmt.executeQuery();
 	        
@@ -110,4 +111,43 @@ public class UserDao {
 		}
 		return message;	
 	}
+	public RegisterUser getUserRecordById(String id) {
+		Connection con = null;
+		RegisterUser user = null;
+		try {
+			con = getConnection();
+			String query = "select * from registration where id=?";
+			PreparedStatement st = con.prepareStatement(query);
+			st.setString(1,id);
+			ResultSet table = st.executeQuery();
+			while(table.next()) {
+				String name = table.getString(1);
+				String phone = table.getString(2);
+				String email = table.getString(3);
+				String address = table.getString(4);
+				String upassword=table.getString(5);
+				String dpassword=AESEncryption.decrypt(upassword);
+				String image=table.getString(6);
+				
+				user = new RegisterUser(name,phone,email,address,dpassword,image);
+						
+			}			
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+		}
+		finally {
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		return user;
+		
+	}
+
 }

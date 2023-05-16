@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.AESEncryption;
 import model.UserDao;
 import model.UserDao.LoginResult;	
 @WebServlet("/userLogin")
@@ -19,9 +20,10 @@ public class Login extends HttpServlet {
 		
 		String email=request.getParameter("email");
 		String password=request.getParameter("password");
+		String dpassword=AESEncryption.encrypt(password);
 		
 		UserDao userDao = new UserDao();
-		LoginResult result = userDao.checkLogin(email, password);
+		LoginResult result = userDao.checkLogin(email, dpassword);
 		boolean isValid = result.isValid();
 		boolean isAdmin = result.isAdmin();
 

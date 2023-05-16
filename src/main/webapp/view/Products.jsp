@@ -324,13 +324,13 @@
             <a href="mailto:khadkanripesh@gmail.com">khadkanripesh@gmail.com</a>
           </div>
           <div class="right">
-            <a href="./cart.html">
+            <a href="./Cart.jsp">
               <li><i class="fa-solid fa-cart-shopping"></i>Cart</li>
             </a>
-            <a href="./register.html">
+            <a href="./view/Register.jsp">
               <li><i class="fa-solid fa-user"></i>Create Account</li>
             </a>
-            <a href="./login.html">
+            <a href="./view/Login.jsp">
               <li><i class="fa-solid fa-right-to-bracket"></i>Login</li>
             </a>
           </div>
@@ -342,8 +342,8 @@
       <div class="container">
         <div class="row">
           <img alt="" src="./image/LOGO.png" height="70px">
-          <form>
-            <input type="search" placeholder="Search..." />
+          <form action="${pageContext.request.contextPath}/search" method="post">
+            <input type="search" name="search" placeholder="Search..." />
             <button type="submit">Search</button>
           </form>
         </div>
@@ -392,9 +392,11 @@
               <div class="resp">
                 <div class="image">
                 <img src="Images/Product/${product.imageName}" height="250px" width="200px" />
+                <a href="cart?id=${product.productID}">
                   <button class="addtocartbtn">
                     <i class="fa-solid fa-cart-shopping"></i> Add to cart
                   </button>
+                </a>
                 </div>
               </div>
               <div class="detail">${product.productName}</div>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>LugaHaru</title>
 <script
       src="https://kit.fontawesome.com/dca5378fb4.js"
       crossorigin="anonymous"
@@ -252,11 +252,11 @@
             <a href="mailto:khadkanripesh@gmail.com">khadkanripesh@gmail.com</a>
           </div>
           <div class="right">
-            <a href="./cart.html">
+            <a href="./Cart.jsp">
               <li><i class="fa-solid fa-cart-shopping"></i>Cart</li>
             </a>
-            <a href="./Register.jsp">
-              <li><i class="fa-solid fa-user"></i>Create Account</li>
+            <a href="edit">
+              <li><i class="fa-solid fa-user"></i>My profile</li>
             </a>
             <a href="./Login.jsp">
               <li><i class="fa-solid fa-right-to-bracket"></i>Login</li>
@@ -270,8 +270,8 @@
       <div class="container">
         <div class="row">
           <img alt="" src="./image/LOGO.png" height="70px">
-          <form>
-            <input type="search" placeholder="Search..." />
+          <form action="${pageContext.request.contextPath}/search" method="post">
+            <input type="search" name="search" placeholder="Search..." />
             <button type="submit">Search</button>
           </form>
         </div>
